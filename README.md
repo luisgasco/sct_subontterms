@@ -1,6 +1,20 @@
 # SCT_SubOntTerms 
-A script to obtain a tsv file with child terms and codes of Snomed CT given a seed of codes 
+A script to obtain a tsv file with the Snomed CT child terms and codes from a list of seed codes.
 
+For example we would use this script if we want to get the terms and child snocmed ids of the code "272115004", whose descriptor is "Synchronicities". 
+
+As a result of the script you would get a tsv file with the following format, containing the codes "255215002" and "255237009" (children of the above code) as well as their descriptors and synonyms:
+
+```sh
+255215002 asynchronous (qualifier)
+255215002 asynchronous
+255215002 Asynchronous (qualifier value)
+255215002 Asynchronous
+255237009 asynchronous (qualifier)
+255237009 synchronous
+255237009 Synchronous (qualifier value)
+255237009 Synchronous
+```
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -51,3 +65,5 @@ python sct_subontterms.py -r "/Path/to/Full/Terminoology/sct2_Relationship_Full_
     -o "output_terms.tsv" \
     -l 258695005,272103003,7389001
 ```
+
+You can download de Snomed-CT RF2 files [here](https://snomed-ct.sanidad.gob.es/snomed-ct/solicitudLicencia.do). The relationship file can be found in the International Edition version.
